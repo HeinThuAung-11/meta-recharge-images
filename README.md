@@ -33,6 +33,24 @@ Prefer **WebP**, ≤ ~1024px wide, to keep files small.
    **"Paste image URL"** → Save. The app and website then load it straight from
    the CDN.
 
+## Bulk workflow (scripts)
+
+For a batch of images:
+
+```bash
+# 1. Drop image files into games/ gift-cards/ or products/ (any names are fine)
+
+# 2. Clean filenames into safe slugs (preview, then apply)
+./normalize.sh            # preview:  "Mobile Legends (MM).PNG" -> mobile-legends-mm.png
+./normalize.sh --apply    # do the renames
+
+# 3. Push everything at once and print every jsDelivr URL
+./upload.sh               # commits + pushes, writes all URLs to urls.txt
+```
+
+`urls.txt` then holds the full list of `cdn.jsdelivr.net/...` URLs to paste into
+the admin **Image** tab. Both scripts are safe to re-run and only act on what changed.
+
 ## Notes
 
 - **New files** are served immediately (first request fetches from GitHub, then
