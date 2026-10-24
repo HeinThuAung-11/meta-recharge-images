@@ -15,7 +15,7 @@ set -euo pipefail
 OWNER="HeinThuAung-11"
 REPO="meta-recharge-images"
 BRANCH="main"
-FOLDERS=(games gift-cards products)
+FOLDERS=(game-logos game-packages gift-cards products)
 
 cd "$(dirname "$0")"
 

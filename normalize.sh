@@ -15,7 +15,7 @@
 #
 set -euo pipefail
 
-FOLDERS=(games gift-cards products)
+FOLDERS=(game-logos game-packages gift-cards products)
 APPLY=0
 [ "${1:-}" = "--apply" ] && APPLY=1
 
